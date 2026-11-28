@@ -1,26 +1,38 @@
-# Gradient Descent Workshop
+# Workshop: Gradient Descent in Single- and Multi-Layer Neural Networks
 
-**Course:** Foundations of Machine Learning
+**Course:** Foundations of Machine Learning Frameworks
+**Team members:**
 
-## Team Members
-
-- Senay Teweldebrhan — 9120588
 - Ricardo Mohammed — 7500382
 - Juan Camilo Chirivi — 9115141
 - Zeynep Ozdemir — 9045142
+- Senay Teweldebrhan — 9120588
 
-## Workshop Description
+**Submission date:** November 27th, 2026
+**Repository:** [GradientDescent_Workshop](https://github.com/ricardo-mohammed/GradientDescent_Workshop.git)
 
-This workshop explores gradient descent as an iterative optimization method for minimizing loss in single- and multi-layer neural networks. It covers parameter updates, learning rates, backpropagation, and different variants of gradient descent using NumPy, PyTorch, TensorFlow, and Keras.
+## Setup
 
-## Summary of Work
+Use Python 3.14.5 to create and activate a virtual environment, then install the project requirements:
 
-- **Workshop demonstrations:** Gradient descent from scratch, linear regression, learning rate comparisons, and multi-layer neural networks.
-- **Challenge A – PyTorch:** Manual gradient descent using automatic differentiation, Mean Squared Error (MSE), parameter updates, and gradient resetting.
-- **Challenge B – TensorFlow:** Gradient descent using `tf.GradientTape()` to calculate gradients and update weights and biases. Implementation is included as commented code.
-- **Challenge C – Keras:** High-level model training using `model.compile()` and `model.fit()`, and a custom training loop. Implementations are included as commented code.
-- **Reflection Challenge:** Questions covering conceptual understanding, practical understanding, framework comparison, and synthesis. Written answers are not yet included in the supplied notebook.
+```powershell
+py -3.14 -m venv .venv
+.venv\Scripts\Activate.ps1
+python --version
+python -m pip install -r requirements.txt
+```
 
-## Key Takeaway
+Confirm that `python --version` reports Python 3.14.5. In VS Code, open `notebooks/GradientDescent_Workshop.ipynb` and select the `.venv` environment as the notebook kernel. Run the notebook from top to bottom.
 
-PyTorch, TensorFlow, and Keras use different interfaces but follow the same optimization principle: compute predictions, calculate loss, compute gradients, and update parameters to minimize loss.
+## Workshop overview
+
+The workshop develops gradient descent from its mathematical intuition to neural-network training. It introduces loss functions, gradients, negative-gradient updates, and learning rates, then applies these ideas to a single parameter, a neuron, and multi-layer networks. It also compares batch, stochastic, and mini-batch gradient descent and explains how backpropagation efficiently computes gradients.
+
+The practical sections use PyTorch to inspect tensors and gradients, perform manual updates, fit a linear model, and train a small multi-layer network. The challenges extend the training workflow to PyTorch autograd, TensorFlow's `GradientTape`, and Keras's built-in and custom training APIs.
+
+## Section 17: Reflection challenge
+
+- **17(A) — Conceptual understanding:** Explain what the gradient tells us, why gradient descent moves in the negative-gradient direction, how the learning rate affects updates, why optimization is iterative, and why multi-layer networks use backpropagation.
+- **17(B) — Practical understanding:** Consider the effects of very small gradients and overly large learning rates, why mini-batches are widely used, and why PyTorch gradients must be reset between iterations.
+- **17(C) — Framework comparison:** Compare how PyTorch, TensorFlow, and Keras calculate gradients and perform updates, including the convenience and flexibility of Keras's `model.fit()`.
+- **17(D) — Synthesis:** Describe gradient descent both intuitively, without equations, and mathematically using a local linear approximation.
